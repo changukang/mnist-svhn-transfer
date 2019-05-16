@@ -8,7 +8,7 @@ def get_loader(config):
     transform = transforms.Compose([
                     transforms.Scale(config.image_size),
                     transforms.ToTensor(),
-                    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+                    transforms.Normalize((0.5, ), (0.5, ))])
     
     svhn = datasets.SVHN(root=config.svhn_path, download=True, transform=transform)
     mnist = datasets.MNIST(root=config.mnist_path, download=True, transform=transform)
